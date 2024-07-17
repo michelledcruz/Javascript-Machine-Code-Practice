@@ -9,3 +9,6 @@ var arr = split_word.map(function(word){
 
 var res = arr.join(" ") // join all words by space
 console.log(res);
+
+
+//How to check if the given object is array or not
