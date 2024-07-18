@@ -109,3 +109,20 @@ const employees = [
 const emp = employees.filter(employee => employee.age>30 && employee.department === 'Engineering');
 const NameList = emp.map(Name => Name.name);
 console.log(NameList);
+
+
+//Given an array of product objects, each containing name, category, and price, write a function that calculates the total cost of all products in the "Electronics" category that are priced above $100.
+//
+
+const products = [
+  { name: 'Laptop', category: 'Electronics', price: 1200 },
+  { name: 'Keyboard', category: 'Electronics', price: 80 },
+  { name: 'Phone', category: 'Electronics', price: 600 },
+  { name: 'Shirt', category: 'Clothing', price: 40 }
+];
+// Expected output: 1800
+
+
+const list = products.filter(product => product.category === "Electronics" && product.price > 100);
+const Total = list.reduce((sum, list) => sum + list.price, 0 );
+console.log(Total);
