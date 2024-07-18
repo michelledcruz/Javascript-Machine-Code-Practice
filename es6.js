@@ -28,3 +28,38 @@ const tax = products.map(product => {
 })
 
 console.log(tax);
+
+
+//Given an array of products, where each product has a nested array of reviews, write a function that adds an averageRating property to each product, which is the average of all its review ratings.
+
+const products = [
+  {
+    name: 'Laptop',
+    reviews: [
+      { rating: 4 },
+      { rating: 5 },
+      { rating: 3 }
+    ]
+  },
+  {
+    name: 'Phone',
+    reviews: [
+      { rating: 2 },
+      { rating: 4 }
+    ]
+  }
+];
+
+
+
+
+const avgRatingRes = products.map( product =>{
+const totalRating = product.reviews.reduce((sum, review) => sum + review.rating, 0);
+const averageRating = totalRating / product.reviews.length;
+  return {
+    ...product,
+    avgRating: averageRating
+  };
+})
+
+console.log(avgRatingRes);
