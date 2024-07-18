@@ -94,3 +94,18 @@ const studentsWithMarks = students.map(student =>{
 })
 // console.log(newArr);
 console.log(studentsWithMarks);
+
+
+//Given an array of employee objects, each containing name, age, and department, write a function that returns an array of names of employees who are older than 30 and work in the "Engineering" department.
+//
+
+const employees = [
+  { name: 'Alice', age: 28, department: 'HR' },
+  { name: 'Bob', age: 35, department: 'Engineering' },
+  { name: 'Charlie', age: 32, department: 'Engineering' },
+  { name: 'David', age: 25, department: 'Marketing' }
+];
+// Expected output: ['Bob', 'Charlie']
+const emp = employees.filter(employee => employee.age>30 && employee.department === 'Engineering');
+const NameList = emp.map(Name => Name.name);
+console.log(NameList);
