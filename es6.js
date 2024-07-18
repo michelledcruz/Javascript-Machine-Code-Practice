@@ -12,3 +12,19 @@ console.log(res);
 
 
 //How to check if the given object is array or not
+
+//add new property named as tax in the existing products and return new products array
+
+const products = [
+  { name: 'Laptop', price: 1000 },
+  { name: 'Phone', price: 500 }
+];
+
+const tax = products.map(product => {
+  return {
+   ...product,
+   productTax: product.price* 1.2
+ };
+})
+
+console.log(tax);
