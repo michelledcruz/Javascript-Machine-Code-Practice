@@ -63,3 +63,34 @@ const averageRating = totalRating / product.reviews.length;
 })
 
 console.log(avgRatingRes);
+
+
+//Given an array of objects representing students, each with a name and an array of grades, write a function that returns an array 
+//where each student object has a new property gradeSummary, which contains the highest, lowest, and average grade.
+const students = [
+  { name: 'John', grades: [85, 92, 78, 88] },
+  { name: 'Jane', grades: [95, 90, 93, 97] },
+  { name: 'Jack', grades: [70, 75, 80, 65] }
+];
+
+const studentsWithMarks = students.map(student =>{
+    
+    const highestMark =  Math.max(...student.grades);
+    const lowestMark =  Math.min(...student.grades);
+    const totalMark = student.grades.reduce((sum, marks) => sum + marks, 0);
+    const averageMark = totalMark / student.grades.length;
+     
+    return{
+        ...student,
+        gradeSummary:
+            {
+                highestMarks: highestMark,
+                lowestMarka: lowestMark, 
+                averageMarks: averageMark
+                }
+            
+        // avgMarks:avgMark
+    };
+})
+// console.log(newArr);
+console.log(studentsWithMarks);
