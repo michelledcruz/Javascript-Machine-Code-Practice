@@ -126,3 +126,23 @@ const products = [
 const list = products.filter(product => product.category === "Electronics" && product.price > 100);
 const Total = list.reduce((sum, list) => sum + list.price, 0 );
 console.log(Total);
+
+
+//Given an object representing a person with properties name, age, and address (which is another object with city and country), write a function that returns a string in the format "Name is X, age is Y, lives in Z, W."
+const person = {
+  name: 'John Doe',
+  age: 30,
+  address: {
+    city: 'New York',
+    country: 'USA'
+  }
+};
+
+
+const details = ({ name, age, address: { city, country}}) => {
+    return `Name is ${name}, age is ${age}, lives in ${city}, ${country}.`;
+}
+
+
+console.log(details(person));
+
